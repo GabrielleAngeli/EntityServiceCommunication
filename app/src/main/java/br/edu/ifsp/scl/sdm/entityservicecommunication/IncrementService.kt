@@ -10,7 +10,7 @@ import android.os.Message
 
 class IncrementService : Service() {
 
-    private inner class IncrementHandler(looper: Looper): Handler() {
+    private inner class IncrementHandler(looper: Looper): Handler(looper) {
         override fun handleMessage(msg: Message) {
             super.handleMessage(msg)
             msg.data.getInt("VALUE").also {
